@@ -17,15 +17,15 @@ const contribuicao = 25
 
 if (sexo == "M" && contribuicao >= 35) {
   if (contribuicao + idade == 95) {
-    console.log(` ${nome}, voce pode se aposentar`)
+    console.log(` ${nome1}, voce pode se aposentar`)
   }
 
 } else if (sexo == "F" && contribuicao >= 30) {
   if (contribuicao + idade == 85) {
-    console.log(` ${nome}, voce pode se aposentar`)
+    console.log(` ${nome1}, voce pode se aposentar`)
   }
 
 } else {
-  console.log(` ${nome}, voce nao pode se aposentar`)
+  console.log(` ${nome1}, voce nao pode se aposentar`)
 
 }
