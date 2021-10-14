@@ -1,25 +1,31 @@
-//// Calculo IMC //////
-const nome = "Jonatha"
-const peso = 120
-const altura = 1.81
+const nome = "Karla"
+const peso = 60
+const altura = 1.55
 
-const imc = peso / (altura * altura) 
+const imc = peso / (altura * altura)
 
-if (imc >= 30){
-  console.log('Jonatha voce esta acima do peso')
-} else{
-  console.log('Jonatha voce nao esta acima do peso')
+if (imc >= 30) {
+  console.log(` ${nome} voce esta acima do peso `)
+} else {
+  console.log(` ${nome} voce nao esta acima do peso `)
 }
 
-///////////////////////Calculo Aposentadoria//////////////////////////
-const nome1 = 'Karla' 
-const sexo = 'F'
-const idade = 55
-const contribuicao = 30
-const TempoTotal = idade + contribuicao
+const nome1 = "Jonatha"
+const sexo = "F"
+const idade = 60
+const contribuicao = 25
 
-if ( sexo === 'F' && TempoTotal >=85 && contribuicao >=30  ){
-  console.log('Karla, voce pode se aposentar')
+if (sexo == "M" && contribuicao >= 35) {
+  if (contribuicao + idade == 95) {
+    console.log(` ${nome}, voce pode se aposentar`)
+  }
+
+} else if (sexo == "F" && contribuicao >= 30) {
+  if (contribuicao + idade == 85) {
+    console.log(` ${nome}, voce pode se aposentar`)
+  }
+
 } else {
-  console.log('Karla, voce nao pode se aposentar')
+  console.log(` ${nome}, voce nao pode se aposentar`)
+
 }
