@@ -18,7 +18,7 @@ Jarmine trabalha com JavaScript, CSS
 Tuane trabalha com HTML, Node.js
 */
 
-for(i=0; i < usuarios.length; i++ ){
+for (i = 0; i < usuarios.length; i++) {
   console.log(`${usuarios[i].nome} trabalha com ${usuarios[i].tecnologias}`)
 }
 
@@ -36,20 +36,20 @@ function checaSeUsuarioUsaCSS(usuario) {
 }
 */
 
-function checaSeusuarioUsaCSS(usuario){
-  
-   for (i=0; i < usuario.tecnologias.length; i++){
-     if (usuario.tecnologias[i] == 'CSS'){
-      return true
-     }
+function checaSeusuarioUsaCSS(usuario) {
 
-   }
+  for (i = 0; i < usuario.tecnologias.length; i++) {
+    if (usuario.tecnologias[i] == 'CSS') {
+      return true
+    }
+
+  }
 }
 
-for (let i = 0; i < usuarios.length; i++){
+for (let i = 0; i < usuarios.length; i++) {
   const usuarioTrabalhaComCSS = checaSeusuarioUsaCSS(usuarios[i]);
 
-  if(usuarioTrabalhaComCSS) {
+  if (usuarioTrabalhaComCSS) {
     console.log(`O usuário ${usuarios[i].nome} trabalha com CSS`)
   }
 }
@@ -81,15 +81,33 @@ const usuarios1 = [
 ];
 let soma = 0
 
-function somanumeros(numeros){
-    
+function somanumeros(numeros) {
+  const total = numeros.reduce((total, ind) => total + ind)
+  return total
+
 }
-function calculaSaldo(receitas, despesas){
- 
+function calculaSaldo(receitas, despesas) {
+  let somaReceitas = somanumeros(receitas)
+  let somaDespesas = somanumeros(despesas)
+
+  let totalDespesas = somaReceitas - somaDespesas
+
+
+
+  return totalDespesas
 }
 
 
 
-for(i=0; i< usuarios1.length; i++){
-  const calc = calculaSaldo(usuarios1[i].receitas, usuarios1[i].despesas)
+for (i = 0; i < usuarios1.length; i++) {
+  const total = calculaSaldo(usuarios1[i].receitas, usuarios1[i].despesas)
+
+  if (total < 0) {
+    console.log(`${usuarios1[i].nome} possui saldo NEGATIVO de ${total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`)
+  } else {
+    console.log(`${usuarios1[i].nome} possui saldo POSITIVO de ${total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`)
+
+  }
+
+  //console.log(total, usuarios1[i].nome)
 }
